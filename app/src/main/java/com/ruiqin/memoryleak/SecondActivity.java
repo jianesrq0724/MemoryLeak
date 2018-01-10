@@ -1,13 +1,34 @@
 package com.ruiqin.memoryleak;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.content.Context;
+import android.content.Intent;
 
-public class SecondActivity extends AppCompatActivity {
+import com.ruiqin.memoryleak.base.BaseActivity;
+
+public class SecondActivity extends BaseActivity {
+
+    public static void startActivity(Context context) {
+        Intent intent = new Intent(context, SecondActivity.class);
+        context.startActivity(intent);
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+    protected void initView() {
+
     }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_second;
+    }
+
+
+
 }
+

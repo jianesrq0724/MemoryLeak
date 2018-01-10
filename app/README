@@ -1,5 +1,9 @@
-Toast
+Context导致的内存泄漏：
 
+Toast:
+静态变量的生命周期和Application一样长，导致Activity资源没有释放
+
+单列：引用Context
 
 ---
 

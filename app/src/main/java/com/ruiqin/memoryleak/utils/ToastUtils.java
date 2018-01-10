@@ -14,9 +14,15 @@ public class ToastUtils {
 
     private static Toast mToast;
 
+    /**
+     * 使用Application的Context防止内存泄漏
+     *
+     * @param context
+     * @param message
+     */
     public static void showShort(Context context, String message) {
         if (mToast == null) {
-            mToast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+            mToast = Toast.makeText(context.getApplicationContext(), message, Toast.LENGTH_SHORT);
         } else {
             mToast.setText(message);
         }
